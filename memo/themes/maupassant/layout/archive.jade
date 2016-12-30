@@ -2,13 +2,11 @@ extends base
 
 block title
   if page.category
-     title= config.title
-  if page.tag
-     title= config.title
+     title= config.title + ': ' + page.category
   if page.archive
-     title= config.title
+     title= config.title + ': ' + __('archive')
   if page.about
-     title= config.title
+     title= config.title + ': ' + '关于'
 block content
   if page.category || page.tag
       h1.label-title=  __('reading_label', page.category || page.tag)
